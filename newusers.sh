@@ -3,7 +3,7 @@
 # Take filename as command line argument and assign default password
 namefile=$1
 unames=$(cat "$namefile")
-pass="Password1!"
+pass="P@ssword"
 
 # Check to see if the filename exists then prompt for sudo password
 if [ -e $namefile ];
