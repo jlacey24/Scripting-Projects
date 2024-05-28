@@ -1,0 +1,21 @@
+---
+- name: Install Nginx & HAProxy to the latest versions
+  hosts: all
+  remote_user: root
+  tasks:
+  - name: Install Nginx
+    apt: name=nginx state=latest
+    become: yes
+  - name: Start Nginx
+    service:
+      name: nginx
+      state: started
+    become: yes
+  - name: Install HAProxy
+    apt: name=haproxy state=latest
+    become: yes
+  - name: Start HAProxy
+    service:
+      name: haproxy
+      state: started
+    become: yes
