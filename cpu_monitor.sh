@@ -10,7 +10,7 @@ EXTREME=3.0
 CPU=$(top -bn1 | grep "Cpu(s)" | awk '{print $2 + $4}')
 
 # Check each threshold and send the threshold category and actual CPU usage
-# via email to jonnylacey24@gmail.com
+# via email to <youremailaddress>
 if (( $(echo "$CPU > $EXTREME" | bc -l) )); then
 echo "CPU usage for $HOSTNAME is at $CPU, exceeding the threshold of $EXTREME" | 
 mail -s "System is under EXTREME load" <emailAddress>
